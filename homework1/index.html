@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>中國的詩與樂</title>
+    
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+ <style>
+  body {
+  margin: 0;
+  font-family: '微軟正黑體', sans-serif;
+}
+  
+   .bg-dark {
+    background-color: #3a6d6a!important;
+   }
+  
+   .bg-image {
+  background-image: url(images/background05.jpg);  /*自己的電腦圖片資料夾位置*/
+  position: absolute;  /*絕對位置*/
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-position: center;
+  background-size: cover;
+  z-index: -999; /*設定圖片層級*/
+}   
+#main-banner {
+  height: 100vh;  /*vh是view height，指螢幕可視範圍高度的百分比*/
+}
+.bg-parallax {
+  background-attachment: fixed;
+}
+
+.navbar {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  margin: auto;
+  z-index: 999;
+}
+
+
+.carousel-caption{
+    color: #3a6d6a;
+}
+
+
+ /* ------ 影片 ------ */
+
+.video-area {
+  padding: 5% 20%;
+  background-color: #a9b9ae;
+
+}
+
+.video-container {
+  position: relative;
+  padding: 30%;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+/* ------產品介紹區塊 ------*/
+
+.creative_area {
+    padding: 50px 0 100px 0;
+}
+
+.creative_area h2 {
+    color: #6fafb4;
+    margin: 20px 0 60px 0;
+}
+
+.creative_area .card img {
+    width: 100%;
+}
+
+.creative_area .card h4 {
+    color: #fff;
+}
+
+
+/* 把標題區塊card-title-wrap設定好位置 */
+
+.creative_area .card-title-wrap {
+    padding: 15px 25px;
+    position: relative;
+    z-index: 9;
+    background-color: #fff;
+}
+
+
+/* 設定產品說明文字標題 */
+
+.creative_area .card-title-wrap .card-title {
+    display: block;
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.creative_area .card-title-wrap .card-text {
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    color: #335
+}
+
+
+/* 滑鼠滑過去  */
+
+.creative_area .card:hover {
+    visibility: visible;
+    background-color: #6fafb4;
+}
+
+.creative_area .card:hover .card-title-wrap {
+    background-color: #6fafb4;
+}
+
+
+/* 滑鼠滑過照片變透明 */
+
+.creative_area .pic-hover {
+    padding-top: 45px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.creative_area .card:hover .pic-hover {
+    opacity: .8;
+    visibility: visible;
+    color: #FFFFFF;
+}
+
+
+/* 頁腳 */
+
+.footer {
+    background-color: #3a6d6a;
+    padding: 15px 0;
+    position: absolute;
+    
+}
+
+.footer_copyright {
+    font-size: 10px;
+    color: rgba(255,255,255,.5);
+}
+
+ </style>
+</head>
+
+
+
+<body>
+   <!--網頁抬頭選單  -->
+  <header>
+        <nav class="navbar navbar-dark bg-dark navbar-expand-md">
+            <div class="container">
+                    <!-- LOGO -->
+                    <a href="#" class="navbar-brand">
+                      <img src="images/logo.png" alt="logo" width="50" height="auto"/>
+
+                    </a>
+                    <!-- 手機選單漢堡按鈕 -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                     
+                      <!-- 漢堡ICON -->
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    
+                    <!-- 選單內容 -->
+                    <div id="navbar-collapse" class="">
+                      <ul class="navbar-nav">
+                        <li><a href="#Pipa" class="nav-link">詩樂介紹</a></li>
+                        <li><a href="#Guzheng" class="nav-link">樂器歷史</a></li>
+                        <li><a href="#Sheng" class="nav-link">樂器構造</a></li>
+                        <li><a href="#Xiao" class="nav-link">古曲賞析</a></li>
+                        <li><a href="#Di" class="nav-link">著名演奏家</a></li>
+                      </ul>
+                    </div>
+                 </div>  
+               </nav>
+    
+   <!--  背景圖片  -->
+    <div id="main-banner"></div>
+   <div class="bg-image"></div>
+   <div class="bg-image bg-parallax"></div>
+  
+  <!-- 可以輪播的Banner圖片 -->
+  <section>
+      <div id="carousel-controller" class="carousel slide" data-ride="carousel">
+        <!-- 輪播圖片 -->
+        <div class="carousel-inner">
+          <!-- 圖片1 -->
+          <div class="carousel-item active">
+            <img class="w-100" src="images/Banner4.jpg" alt="">
+            <div class="carousel-caption">
+              <h1>以琴陶冶性情</h1>
+              <p>孤身一人時，彈奏一曲《陽春白雪》，即使無人相和又何妨？</p>
+            </div>
+        </div>
+          <!-- 圖片2 -->
+          <div class="carousel-item">
+            <img class="w-100" src="images/Banner5.jpg" alt="">
+            <div class="carousel-caption">
+              <h1>以曲覓知音</h1>
+              <p>若能奏一曲《高山流水》得一知己，此生足矣。</p>
+            </div>
+          </div>
+          <!-- 圖片3 -->
+          <div class="carousel-item">
+            <img class="w-100" src="images/Banner3.jpg" alt="">
+            <div class="carousel-caption">
+              <h1>以音奏真心</h1>
+              <p>將心意寄託於音，一曲《平沙落雁》借鸿鸪之远志，写逸士之心胸也。</p>
+            </div>
+          </div>
+         
+        <!-- 圖片上一頁按鈕 -->
+        <a href="#carousel-controller" data-slide="prev" class="carousel-control-prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <!-- 圖片下一頁按鈕 -->
+        <a href="#carousel-controller" data-slide="next" class=" carousel-control-next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+  
+        <!-- 下方點點 -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-controller" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-controller" data-slide-to="1"></li>
+          <li data-target="#carousel-controller" data-slide-to="2"></li>
+        </ol>
+ 
+       </div>
+  </section>
+     
+     <!-- 影片 -->
+     <section class="container-fluid video-area">
+    <div class="video-container">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/6n0eb76vsHU" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div> 
+      </section>
+    
+    </br>
+      <section id="creative">
+        <div class="container">
+          <h2 class="text-center">
+            詩樂介紹
+          </h2>
+
+      <!-- 規格 -->
+  <section id="standard" class="standard_area">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12">
+              <table class="table table-hover">
+    
+                    <tr>
+                     <th>樂器</th>
+                     <th>樂器圖片</th>
+                     <th>詩</th>
+                    </tr>
+                    <tr>
+                    <th>琵琶</th>
+                    <td scope="row"><img src="images/pipa2.jpg" 
+                        alt="琵琶" title="琵琶" style="width: 400px;"></td>
+                    <td>
+                         王昌齡《從軍行》之二</br>
+                        『琵琶起舞換新聲，總是關山舊別情。撩亂邊愁聽不盡，高高秋月照長城。』
+                        </br>
+                         </br>
+                            題解：據莊永平編著的《琵琶手冊》中的統計，唐代詩作中出現與琵琶相關的較有名的作品有近百首。最出名的應該就是《琵琶行》了，裡邊的經典詩句如「嘈嘈切切錯雜彈，大珠小珠落玉盤」等也成為描寫琵琶的經典。
+                            這首從軍行，也可以看出琵琶與邊塞、與軍事也有頗多的聯繫。想起琵琶的起源，在漢代琵琶又稱「批把」，有記載說「批把本出於胡中，馬上所鼓也。推手前曰批，引手卻曰把，象其鼓時，因以為名也。」從中可以看出，琵琶本是在馬上彈奏的樂器向前彈出稱作批，向後挑進稱做把。
+                            
+                    </td>
+
+                   
+
+                    <tr>
+                            <th>古箏</th>
+                        <td scope="row"><img src="images/guzheng.jpg" 
+                            alt="古箏" title="古箏" style="width: 400px;"></td>
+                        <td>
+                            李端《聽箏》</br>
+                            『鳴箏金栗柱， 素手玉房前。欲得周郎顧， 時時誤拂弦。』
+                            </br>
+                              </br>
+                             題解：為了所愛慕的人顧盼自己，便故意將弦撥錯，彈箏女可愛形象躍然紙上，用現在的話說就是萌噠噠。周瑜不但是大將還是音樂家，別人奏曲有誤，他就回頭一看，當時人稱：「曲有誤，周郎顧。」,或許這首詩就是受到這個啟發而作的吧。
+
+                                                                
+                                
+                    </td>
+
+                    <tr>
+                            <th>笙</th>
+                        <td scope="row"><img src="images/sheng.jpg" 
+                            alt="笙" title="笙" style="width: 400px;"></td>
+                        <td>
+                                郎士元《聽鄰家吹笙》</br>
+                            『鳳吹聲如隔彩霞，不知牆外是誰家。 重門深鎖無尋處，疑有碧桃千樹花。』
+                            </br>
+                            </br>
+                             題解：笙的聲音如隔著彩霞從天而來，不知牆外究竟是哪一家。重重大門緊鎖無處尋覓，但心中猜想其中必有千樹的桃花。雖然是聽笙，但是作者意在創造一種浪漫且引人入勝的意境。
+                             笙既可以吹奏單旋律，也可以吹奏和弦，如同七色彩霞。這個比喻非常的恰當，彩虹也是七色重疊，樂音也有七個，七種樂音對應七色彩霞，絕妙的比喻。
+
+                                
+                    </td>
+
+
+                    <tr>
+                            <th>簫</th>
+                        <td scope="row"><img src="images/xiao.jpg" 
+                            alt="簫" title="簫" style="width: 400px;"></td>
+                        <td>
+                            杜牧《寄揚州韓綽判官》</br>
+                            『青山隱隱水迢迢，秋盡江南草未凋。二十四橋明月夜，玉人何處教吹簫？』
+                            </br>
+                             </br>
+                            題解：這首詩是唐代詩人杜牧離開揚州以後懷念昔日同僚韓綽判官而作，這首詩描寫揚州的美景，在美景中簫聲悠揚傳播，也許是羨慕友人有閒情逸緻，也可能是對揚州生活的眷戀。
+
+                                
+                        </td>
+
+
+                        <tr>
+                                <th>笛</th>
+                            <td scope="row"><img src="images/di.jpg" 
+                                alt="笛" title="笛" style="width: 400px;"></td>
+                            <td>
+                                 李白《春夜洛城聞笛》</br>
+                                『誰家玉笛暗飛聲，散入春風滿洛城。此夜曲中聞折柳，何人不起故園情。』
+                                </br>
+                                </br>
+                                 題解：李白性格豪爽，喜飲酒。與彈撥相比，吹奏的樂器可能更容易表達豐富的感情，所以李白寫笛的詩歌比較多。笛聲起，思鄉切，在夜深人靜的時候突然聽到了熟悉的笛聲，如同在外地響起自己的故鄉，感情直率真摯又有餘蘊，令人回味無窮。
+
+                                    
+                        </td>
+
+                        <tr>
+                                <th>古琴</th>
+                            <td scope="row"><img src="images/guqin.jpg" 
+                                alt="古琴" title="古琴" style="width: 400px;"></td>
+                            <td>
+                                 白居易《聽幽蘭》</br>
+                                『琴中古曲是幽蘭，為我殷勤更弄看。欲得身心俱靜好，自彈不及聽人彈。』
+                            </br>
+                                </br>
+                                </br>
+                                題解：古琴的歷史悠久，歷代文人多鼓琴，所以留下非常多的詩詞歌賦。白居易不一定是彈琴的高手，但絕對是寫琴詩有的高手，這首《聽幽蘭》中，白居易知琴，知意，追求「身心俱靜好
+                                」，就算不自己彈，聽別人彈也是很好。中國人自古有遇「知音」的美好理想，自己弄琴可以遇聽琴者為知音，聽而不弄者也可以尋弄琴者為知音。
+                                                                     
+                                                                      
+                                    
+                        </td>
+
+
+
+    
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>   
+
+
+
+
+
+</body>
+
+
+
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+
+
+
+
+
+</html>
